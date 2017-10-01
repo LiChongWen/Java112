@@ -1,5 +1,7 @@
 package assignments.Q01.e01;
 
+import java.util.Scanner;
+
 /**
  * Created by liarthur on 2017/7/28.
  */
@@ -10,14 +12,23 @@ public class Driver {
 
     private void run() {
         Fraction fraction1 = new Fraction();
-        //fraction1.denominator = 4;
-        fraction1.setDenominator(0);
 
-        fraction1.numerator = 3;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("输入分母");
+        int Den = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("输入分子");
+        int Num = scanner.nextInt();
+
+
+        //fraction1.denominator = 4;
+        fraction1.setDenominator(Den);
+
+        fraction1.setNumerator(Num);
 
 
         fraction1.trace();
 
-        System.out.println("使用getter取到对象中的属性值：" + fraction1.numerator + "/" + fraction1.getDenominator());
+        System.out.println("使用getter取到对象中的属性值：" + fraction1.getNumerator() + "/" + fraction1.getDenominator());
     }
 }
