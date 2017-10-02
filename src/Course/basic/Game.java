@@ -13,6 +13,8 @@ public class Game {
         Player player1 = new Player();
         Player player2 = new Player(200, 200, 200);
 
+
+
 //        player1.setAtk(100);
 //        player1.setDef(100);
 //        player1.setHp(100);
@@ -27,7 +29,19 @@ public class Game {
 
         player1.trace();
 
-        System.out.println(player1.getHp());
+        System.out.println("player1 HP:" + player1.getHp());
+
+
+        //多类多对象注入
+        Player player3 = new Player(10, 10, 200);//创建玩家
+        //以下属于外部注入！！
+
+        Weapon weapon = new Weapon();//创建武器
+        weapon.setAtk(15);//武器属性
+        player3.setWeapon(weapon);//给予玩家武器
+
+
+        System.out.println("总攻击为" + player3.totalAtk());
     }
 
 }
